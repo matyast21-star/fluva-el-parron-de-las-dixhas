@@ -26,7 +26,9 @@ export const business: BusinessInfo = {
   instagram: { handle: '@_elparrondelasdichas', url: 'https://www.instagram.com/_elparrondelasdichas/' },
   facebookUrl: null,
   googleReviewUrl: null,
-  openingHoursText: null,
+  // Horario confirmado por el cliente el 2026-11-08. Los días aún no se confirman.
+  openingHoursText: '12:00 a 18:00',
+  openingDaysText: null,
   mapsQuery: 'Ruta F-840 Las Dichas, Casablanca, Valparaíso, Chile',
 };
 

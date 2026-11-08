@@ -44,6 +44,12 @@ describe('contacto', () => {
     expect(within(main).getByRole('link', { name: /WhatsApp/ })).toHaveAttribute('href', expect.stringContaining('https://wa.me/56997506058'));
     expect(within(main).getByText(/Victoria Neira/)).toBeInTheDocument();
   });
+  it('muestra el horario confirmado y marca los días como pendientes', () => {
+    renderAt('/contacto');
+    const main = screen.getByRole('main');
+    expect(within(main).getByText(/12:00 a 18:00/)).toBeInTheDocument();
+    expect(within(main).getByText('Días de atención por confirmar')).toBeInTheDocument();
+  });
 });
 
 describe('cotización de eventos', () => {

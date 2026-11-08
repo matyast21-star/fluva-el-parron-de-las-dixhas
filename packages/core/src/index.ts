@@ -63,6 +63,8 @@ export interface BusinessInfo {
   googleReviewUrl: string | null;
   /** Horario en texto. null = por confirmar. */
   openingHoursText: string | null;
+  /** Días de atención en texto. null = por confirmar. */
+  openingDaysText: string | null;
   mapsQuery: string;
 }
 

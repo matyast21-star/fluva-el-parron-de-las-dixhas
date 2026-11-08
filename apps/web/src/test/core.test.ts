@@ -42,7 +42,7 @@ describe('restaurantJsonLd', () => {
     name: 'R', legalTagline: '', description: 'd', cuisine: ['Chilena'],
     address: { street: 's', locality: 'l', city: 'c', region: 'r', country: 'CL' },
     phone: null, whatsapp: false, contactPerson: null, email: null, instagram: null, facebookUrl: null,
-    googleReviewUrl: null, openingHoursText: null, mapsQuery: 'q',
+    googleReviewUrl: null, openingHoursText: null, openingDaysText: null, mapsQuery: 'q',
   };
   it('omite teléfono y URL si no están confirmados', () => {
     const ld = restaurantJsonLd(b, null);

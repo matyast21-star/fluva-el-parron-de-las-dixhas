@@ -30,7 +30,15 @@ export function LocationBlock({ className, showMap = true }: { className?: strin
           </a>
         </Row>
         <Row icon={<IconClock />} label="Horario">
-          {business.openingHoursText ?? <Pending>Horario de atención por confirmar</Pending>}
+          {business.openingHoursText ? (
+            <>
+              {business.openingDaysText ? `${business.openingDaysText}, ` : ''}
+              {business.openingHoursText}
+              {!business.openingDaysText && <Pending className="mt-1 block w-fit">Días de atención por confirmar</Pending>}
+            </>
+          ) : (
+            <Pending>Horario de atención por confirmar</Pending>
+          )}
         </Row>
         <Row icon={<IconPhone />} label={business.whatsapp ? 'Teléfono y WhatsApp' : 'Teléfono'}>
           {tel ? <a className="text-primary underline underline-offset-4" href={tel}>{business.phone}</a> : <Pending>Número por confirmar</Pending>}
