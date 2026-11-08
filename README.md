@@ -29,7 +29,7 @@ Desarrollado por **FLUVA**, *tecnología que fluye contigo*.
 
 Aparecen en el sitio como "por confirmar"; se editan en `clients/el-parron/src/index.ts`:
 
-- Horario de la venta de semana (empanadas, pastel de choclo y menú) y del local de arriba (pan amasado, tortillas)
+- Horario de la venta de semana (empanadas y pastel de choclo) y del local de arriba (pan amasado, tortillas)
 - Precios, descripciones, alérgenos y fotos de cada plato (`menu`)
 - Enlace verificado a la ficha de Google para reseñas (`googleReviewUrl`)
 - Historia completa de la familia (`history`)

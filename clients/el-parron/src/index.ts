@@ -31,7 +31,7 @@ export const business: BusinessInfo = {
   openingDaysText: 'Sábados y domingos',
   openingHoursSpec: [{ days: ['Saturday', 'Sunday'], opens: '12:00', closes: '18:00' }],
   // Entre semana: venta en una parte del local. Horario de esa venta aún no confirmado.
-  openingNote: 'Durante la semana vendemos empanadas y pastel de choclo en una parte del local, y a veces hay menú. En el local de arriba también hay pan amasado y tortillas.',
+  openingNote: 'Durante la semana vendemos empanadas y pastel de choclo en una parte del local. En el local de arriba también hay pan amasado y tortillas.',
   mapsQuery: 'Ruta F-840 Las Dichas, Casablanca, Valparaíso, Chile',
 };
 
@@ -111,7 +111,7 @@ export const menu: MenuCategory[] = [
   {
     id: 'semana',
     name: 'Durante la semana',
-    note: 'Venta en una parte del local. El menú del día no está todos los días.',
+    note: 'Venta en una parte del local.',
     items: [
       item('empanada-pino', 'Empanada de pino'),
       item('empanada-queso', 'Empanada de queso'),
@@ -119,7 +119,6 @@ export const menu: MenuCategory[] = [
       item('empanada-queso-camaron', 'Empanada de queso camarón'),
       item('empanada-queso-champinon', 'Empanada de queso champiñón'),
       item('pastel-choclo', 'Pastel de choclo'),
-      item('menu-del-dia', 'Menú del día (algunos días)'),
     ],
   },
   {
