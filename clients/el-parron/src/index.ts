@@ -125,7 +125,7 @@ export const menu: MenuCategory[] = [
   {
     id: 'local-arriba',
     name: 'En el local de arriba',
-    items: [item('pan-amasado', 'Pan amasado'), item('tortillas', 'Tortillas')],
+    items: [item('pan-amasado', 'Pan amasado'), item('tortillas', 'Tortillas', { description: 'Pan de campo, más grande que el pan amasado.' })],
   },
   { id: 'once', name: 'Once', items: [item('empanadas', 'Empanadas'), item('sandwiches', 'Sándwiches'), item('queque', 'Queque')] },
 ];
