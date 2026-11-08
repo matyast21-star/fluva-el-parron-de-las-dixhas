@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "@clients/el-parron/theme.css";
+@source "../../../packages/ui/src";
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-surface text-ink font-sans antialiased; }
+  :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}
+
+.paper-pattern {
+  background-image: linear-gradient(rgb(249 246 239 / 0.93), rgb(249 246 239 / 0.93)), url('/brand/patron.webp');
+  background-size: auto, 280px;
+}
