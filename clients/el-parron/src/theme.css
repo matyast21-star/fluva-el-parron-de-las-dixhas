@@ -1,0 +1,22 @@
+/*
+ * Identidad visual de El Parrón de las Dichas (manual de marca).
+ * Los componentes FLUVA usan nombres semánticos (primary, secondary, surface...);
+ * cada cliente solo cambia este archivo.
+ */
+@theme {
+  --color-primary: #5A0E2E;       /* Borgoña principal */
+  --color-primary-dark: #2a0817;
+  --color-secondary: #6B7F3A;     /* Verde parra */
+  --color-secondary-dark: #4c5a28;
+  --color-sand: #D8C3A5;          /* Arena cálida */
+  --color-sand-light: #efe5d3;
+  --color-surface: #F9F6EF;       /* Crema */
+  --color-accent: #C9A347;        /* Dorado */
+  --color-accent-light: #e6cf8f;
+  --color-ink: #2b1a20;
+  --color-ink-soft: #5e4d53;
+
+  --font-script: "Great Vibes", cursive;
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+}

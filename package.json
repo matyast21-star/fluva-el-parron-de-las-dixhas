@@ -1,0 +1,14 @@
+{
+  "name": "fluva-el-parron-de-las-dichas",
+  "private": true,
+  "description": "Plataforma de restaurante y eventos para El Parrón de las Dichas. Desarrollado por FLUVA.",
+  "workspaces": ["apps/*", "packages/*", "clients/*"],
+  "scripts": {
+    "dev": "npm run dev -w @parron/web",
+    "build": "npm run build -w @parron/web",
+    "preview": "npm run preview -w @parron/web",
+    "test": "npm run test -w @parron/web",
+    "typecheck": "npm run typecheck -w @parron/web"
+  },
+  "engines": { "node": ">=20" }
+}
