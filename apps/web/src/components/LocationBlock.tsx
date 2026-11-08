@@ -35,6 +35,7 @@ export function LocationBlock({ className, showMap = true }: { className?: strin
               {business.openingDaysText ? `${business.openingDaysText}, ` : ''}
               {business.openingHoursText}
               {!business.openingDaysText && <Pending className="mt-1 block w-fit">Días de atención por confirmar</Pending>}
+              {business.openingNote && <span className="mt-1 block text-sm text-ink-soft">{business.openingNote}</span>}
             </>
           ) : (
             <Pending>Horario de atención por confirmar</Pending>

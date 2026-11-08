@@ -26,9 +26,12 @@ export const business: BusinessInfo = {
   instagram: { handle: '@_elparrondelasdichas', url: 'https://www.instagram.com/_elparrondelasdichas/' },
   facebookUrl: null,
   googleReviewUrl: null,
-  // Horario confirmado por el cliente el 2026-11-08. Los días aún no se confirman.
+  // Horario y días confirmados por el cliente el 2026-11-08.
   openingHoursText: '12:00 a 18:00',
-  openingDaysText: null,
+  openingDaysText: 'Sábados y domingos',
+  openingHoursSpec: [{ days: ['Saturday', 'Sunday'], opens: '12:00', closes: '18:00' }],
+  // Entre semana: venta en una parte del local. Horario de esa venta aún no confirmado.
+  openingNote: 'Durante la semana vendemos empanadas y pastel de choclo en una parte del local, y a veces hay menú.',
   mapsQuery: 'Ruta F-840 Las Dichas, Casablanca, Valparaíso, Chile',
 };
 
@@ -105,5 +108,19 @@ export const menu: MenuCategory[] = [
   { id: 'aves', name: 'Aves', items: [item('pollo-asado', 'Pollo asado', { featured: true }), item('pollo-arvejado', 'Pollo arvejado')] },
   { id: 'pescados', name: 'Pescados', items: [item('pescado-frito', 'Pescado frito')] },
   { id: 'acompanamientos', name: 'Acompañamientos', items: [item('arroz', 'Arroz'), item('pure', 'Puré'), item('papas-mayo', 'Papas mayo')] },
+  {
+    id: 'semana',
+    name: 'Durante la semana',
+    note: 'Venta en una parte del local. El menú del día no está todos los días.',
+    items: [
+      item('empanada-pino', 'Empanada de pino'),
+      item('empanada-queso', 'Empanada de queso'),
+      item('empanada-jamon-queso', 'Empanada de jamón queso'),
+      item('empanada-queso-camaron', 'Empanada de queso camarón'),
+      item('empanada-queso-champinon', 'Empanada de queso champiñón'),
+      item('pastel-choclo', 'Pastel de choclo'),
+      item('menu-del-dia', 'Menú del día (algunos días)'),
+    ],
+  },
   { id: 'once', name: 'Once', items: [item('empanadas', 'Empanadas'), item('sandwiches', 'Sándwiches'), item('queque', 'Queque')] },
 ];

@@ -42,6 +42,7 @@ export function Carta() {
               <h2 id={`h-${c.id}`} className="font-display text-4xl text-primary">{c.name}</h2>
               <img src="/brand/hoja.webp" alt="" width={80} height={80} className="size-7" />
             </div>
+            {c.note && <p className="-mt-2 mb-5 text-ink-soft">{c.note}</p>}
             <ul className="grid gap-4 md:grid-cols-2">
               {c.items.map((it) => (
                 <li key={it.id}><MenuItemCard item={it} /></li>

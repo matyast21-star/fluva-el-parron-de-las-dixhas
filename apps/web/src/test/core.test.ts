@@ -42,13 +42,20 @@ describe('restaurantJsonLd', () => {
     name: 'R', legalTagline: '', description: 'd', cuisine: ['Chilena'],
     address: { street: 's', locality: 'l', city: 'c', region: 'r', country: 'CL' },
     phone: null, whatsapp: false, contactPerson: null, email: null, instagram: null, facebookUrl: null,
-    googleReviewUrl: null, openingHoursText: null, openingDaysText: null, mapsQuery: 'q',
+    googleReviewUrl: null, openingHoursText: null, openingDaysText: null, openingHoursSpec: null, openingNote: null, mapsQuery: 'q',
   };
   it('omite teléfono y URL si no están confirmados', () => {
     const ld = restaurantJsonLd(b, null);
     expect(ld).not.toHaveProperty('telephone');
     expect(ld).not.toHaveProperty('url');
     expect(ld['@type']).toBe('Restaurant');
+  });
+  it('incluye el horario solo si está confirmado', () => {
+    expect(restaurantJsonLd(b, null)).not.toHaveProperty('openingHoursSpecification');
+    const ld = restaurantJsonLd({ ...b, openingHoursSpec: [{ days: ['Saturday', 'Sunday'], opens: '12:00', closes: '18:00' }] }, null);
+    expect(ld.openingHoursSpecification).toEqual([
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['https://schema.org/Saturday', 'https://schema.org/Sunday'], opens: '12:00', closes: '18:00' },
+    ]);
   });
   it('incluye el teléfono confirmado', () => {
     expect(restaurantJsonLd({ ...b, phone: '+56 9 9750 6058' }, 'https://x.cl').telephone).toBe('+56997506058');
