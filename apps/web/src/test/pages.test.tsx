@@ -28,7 +28,7 @@ describe('rutas públicas', () => {
 describe('carta', () => {
   it('muestra todas las categorías y ningún precio inventado', () => {
     renderAt('/carta');
-    for (const c of ['Durante la semana', 'Cocina chilena', 'Carnes', 'Aves', 'Pescados', 'Acompañamientos', 'Once']) {
+    for (const c of ['Durante la semana', 'En el local de arriba', 'Cocina chilena', 'Carnes', 'Aves', 'Pescados', 'Acompañamientos', 'Once']) {
       expect(screen.getByRole('heading', { level: 2, name: c })).toBeInTheDocument();
     }
     expect(screen.queryByText(/\$\s?\d/)).toBeNull();
