@@ -33,7 +33,20 @@ export interface MenuItem {
 export interface MenuCategory {
   id: string;
   name: string;
+  /** Aclaración visible bajo el título (por ejemplo, días de venta). */
+  note?: string;
   items: MenuItem[];
+}
+
+/** Días en inglés según schema.org (Monday … Sunday). */
+export type SchemaDay = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
+
+export interface OpeningHoursSpec {
+  days: SchemaDay[];
+  /** HH:MM */
+  opens: string;
+  /** HH:MM */
+  closes: string;
 }
 
 export interface Address {
@@ -63,6 +76,12 @@ export interface BusinessInfo {
   googleReviewUrl: string | null;
   /** Horario en texto. null = por confirmar. */
   openingHoursText: string | null;
+  /** Días de atención en texto. null = por confirmar. */
+  openingDaysText: string | null;
+  /** Horario estructurado para Google. null = no se publica. */
+  openingHoursSpec: OpeningHoursSpec[] | null;
+  /** Aviso adicional sobre atención fuera del horario principal. */
+  openingNote: string | null;
   mapsQuery: string;
 }
 
@@ -140,6 +159,14 @@ export function restaurantJsonLd(b: BusinessInfo, siteUrl: string | null, imageU
   const tel = toE164Chile(b.phone);
   if (tel) ld.telephone = tel;
   if (b.email) ld.email = b.email;
+  if (b.openingHoursSpec?.length) {
+    ld.openingHoursSpecification = b.openingHoursSpec.map((s) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: s.days.map((d) => `https://schema.org/${d}`),
+      opens: s.opens,
+      closes: s.closes,
+    }));
+  }
   const same = [b.instagram?.url, b.facebookUrl].filter(Boolean);
   if (same.length) ld.sameAs = same;
   return ld;

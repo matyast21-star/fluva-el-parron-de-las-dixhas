@@ -82,6 +82,9 @@ export function Eventos() {
           <p className="mt-6 text-ink-soft">
             Menús grupales, tarifas y servicios adicionales se cotizan según la fecha y la cantidad de invitados.
           </p>
+          <p className="mt-3 text-ink-soft">
+            Los días de evento a veces también se ofrecen empanadas y parrilladas.
+          </p>
         </section>
 
         <section aria-labelledby="h-cotizar" className="rounded-xl border border-[#e3d4bb] bg-white p-6 md:p-8">

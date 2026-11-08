@@ -28,7 +28,7 @@ describe('rutas públicas', () => {
 describe('carta', () => {
   it('muestra todas las categorías y ningún precio inventado', () => {
     renderAt('/carta');
-    for (const c of ['Cocina chilena', 'Carnes', 'Aves', 'Pescados', 'Acompañamientos', 'Once']) {
+    for (const c of ['Durante la semana', 'En el local de arriba', 'Cocina chilena', 'Carnes', 'Aves', 'Pescados', 'Acompañamientos', 'Once']) {
       expect(screen.getByRole('heading', { level: 2, name: c })).toBeInTheDocument();
     }
     expect(screen.queryByText(/\$\s?\d/)).toBeNull();
@@ -43,6 +43,13 @@ describe('contacto', () => {
     expect(within(main).getByRole('link', { name: '+56 9 9750 6058' })).toHaveAttribute('href', 'tel:+56997506058');
     expect(within(main).getByRole('link', { name: /WhatsApp/ })).toHaveAttribute('href', expect.stringContaining('https://wa.me/56997506058'));
     expect(within(main).getByText(/Victoria Neira/)).toBeInTheDocument();
+  });
+  it('muestra días y horario confirmados', () => {
+    renderAt('/contacto');
+    const main = screen.getByRole('main');
+    expect(within(main).getByText(/Sábados y domingos, 12:00 a 18:00/)).toBeInTheDocument();
+    expect(within(main).queryByText('Días de atención por confirmar')).toBeNull();
+    expect(within(main).getByText(/Durante la semana vendemos empanadas/)).toBeInTheDocument();
   });
 });
 
